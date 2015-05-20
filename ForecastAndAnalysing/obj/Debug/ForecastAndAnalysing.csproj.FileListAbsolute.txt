@@ -2,7 +2,6 @@ c:\users\artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\Foreca
 C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\bin\Debug\ForecastAndAnalysing.exe
 C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\bin\Debug\ForecastAndAnalysing.pdb
 C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.csprojResolveAssemblyReference.cache
-C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.Form1.resources
 C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.Properties.Resources.resources
 C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.csproj.GenerateResource.Cache
 C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.exe
@@ -10,3 +9,6 @@ C:\Users\Artur\documents\visual studio 2013\Projects\ForecastAndAnalysing\Foreca
 C:\Users\Kidzior\Documents\Visual Studio 2015\Projects\ForecastAndAnalysing\ForecastAndAnalysing\bin\Debug\ForecastAndAnalysing.exe.config
 C:\Users\Kidzior\Documents\Visual Studio 2015\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.exe
 C:\Users\Kidzior\Documents\Visual Studio 2015\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.pdb
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.fMainHelp.resources
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.fDataForecasting.resources
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.fMainForm.resources
