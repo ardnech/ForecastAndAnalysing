@@ -28,73 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label_test1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ordId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label_test1
-            // 
-            this.label_test1.AutoSize = true;
-            this.label_test1.Location = new System.Drawing.Point(215, 115);
-            this.label_test1.Name = "label_test1";
-            this.label_test1.Size = new System.Drawing.Size(35, 13);
-            this.label_test1.TabIndex = 0;
-            this.label_test1.Text = "label1";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ordId,
-            this.ordData});
-            this.dataGridView1.Location = new System.Drawing.Point(147, 171);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(361, 150);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // ordId
-            // 
-            this.ordId.HeaderText = "ordId";
-            this.ordId.Name = "ordId";
-            this.ordId.ReadOnly = true;
-            // 
-            // ordData
-            // 
-            dataGridViewCellStyle1.Format = "#,0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ordData.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ordData.HeaderText = "Descr";
-            this.ordData.Name = "ordData";
-            this.ordData.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 472);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label_test1);
+            this.ClientSize = new System.Drawing.Size(1209, 660);
+            this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label_test1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ordData;
     }
 }
 

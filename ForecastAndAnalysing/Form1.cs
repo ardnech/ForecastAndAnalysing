@@ -23,7 +23,7 @@ namespace ForecastAndAnalysing
         {
             databaseConnectivity dbCon = new databaseConnectivity();
 
-            label_test1.Text = dbCon.isDbConnectionSet().ToString();
+            //label_test1.Text = dbCon.isDbConnectionSet().ToString();
 
 
 
@@ -31,11 +31,11 @@ namespace ForecastAndAnalysing
             DataTable dt = new DataTable();
             dbCon.getSqlData("select * from dbo.test", dt);
 
-            
-
+            /*
             dataGridView1.Columns["ordId"].DataPropertyName = "ordId";
             dataGridView1.Columns["ordData"].DataPropertyName = "ordData";
             dataGridView1.DataSource = dt;
+            */
 
 
         }
