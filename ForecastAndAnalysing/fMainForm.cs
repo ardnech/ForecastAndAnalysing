@@ -64,13 +64,14 @@ namespace ForecastAndAnalysing
                 if (frm is fDataForecasting)
                 {
                     if (frm.WindowState == FormWindowState.Minimized)
-                        frm.WindowState = FormWindowState.Normal;
+                        frm.WindowState = FormWindowState.Maximized;
                     frm.Focus();
                     return;
                 }
             }
             fDataForecasting fmh = new fDataForecasting();
             fmh.MdiParent = this;
+            fmh.WindowState = FormWindowState.Maximized;
             fmh.Show();
 
         }
