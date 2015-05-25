@@ -40,7 +40,7 @@ namespace ForecastAndAnalysing
             chart1.Series[0].BorderWidth = 4;
 
             chart1.DataBind();
-
+/*
             DataTable dtProductValuesForTrend = new DataTable();
             dbConn.getSqlData("forecast.productDataForTrend 1, 3", dtProductValuesForTrend);
             chart1.DataSource = dtProductValuesForTrend;
@@ -75,6 +75,7 @@ namespace ForecastAndAnalysing
             // Create Forecasting Series.
             chart1.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chart1.Series["HistoricalData"], chart1.Series["TrendLine"]);
             //chart1.DataManipulator.FinancialFormula()
+*/
             chart1.Update();
 
             textBox1.Text = comboBox_dataForecasting_productList.SelectedValue.ToString();
