@@ -29,14 +29,32 @@ namespace ForecastAndAnalysing
             comboBox_dataForecasting_productList.DataSource = dtProductList;
             comboBox_dataForecasting_productList.DisplayMember = "productName";
             comboBox_dataForecasting_productList.ValueMember = "id";
-
+            
             DataTable dtProductValues = new DataTable();
+            //dbConn.getSqlData("forecast.productData 1", dtProductValues);
             dbConn.getSqlData("forecast.productData 1", dtProductValues);
-
             chart1.DataSource = dtProductValues;
+            
             chart1.Series.First().XValueMember = "month";
             chart1.Series.First().YValueMembers = "value";
+            chart1.Series[0].BorderWidth = 4;
+
             chart1.DataBind();
+
+            DataTable dtProductValuesForTrend = new DataTable();
+            dbConn.getSqlData("forecast.productDataForTrend 1, 3", dtProductValuesForTrend);
+            chart1.DataSource = dtProductValuesForTrend;
+
+            chart1.Series.Add("HistoricalData");
+            chart1.Series["HistoricalData"].XValueMember = "month";
+            chart1.Series["HistoricalData"].YValueMembers = "value";
+            chart1.Series["HistoricalData"].BorderWidth = 4;
+            chart1.Series["HistoricalData"].BorderColor = Color.Green;
+
+            chart1.DataBind();
+
+
+
 
             chart1.Series.Add("TrendLine");
             chart1.Series["TrendLine"].ChartType = SeriesChartType.Line;
@@ -52,9 +70,10 @@ namespace ForecastAndAnalysing
             string forecastingError = "false";
             // Formula parameters
             string parameters = typeRegression + ',' + forecasting + ',' + error + ',' + forecastingError;
-            chart1.Series[0].Sort(PointSortOrder.Ascending, "X");
+            //chart1.Series[0].Sort(PointSortOrder.Ascending, "X");
+
             // Create Forecasting Series.
-            chart1.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chart1.Series[0], chart1.Series["TrendLine"]);
+            chart1.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chart1.Series["HistoricalData"], chart1.Series["TrendLine"]);
             //chart1.DataManipulator.FinancialFormula()
             chart1.Update();
 
