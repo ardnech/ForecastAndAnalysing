@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 
 namespace ForecastAndAnalysing
 {
@@ -24,7 +26,7 @@ namespace ForecastAndAnalysing
 
         private SqlConnection setDbConnectivity() {
 
-            sqlCon.ConnectionString = "Data Source=.\\sql2014; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
+            sqlCon.ConnectionString = "Data Source=.\\sqlexpress; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
 
             try
             {
@@ -33,11 +35,13 @@ namespace ForecastAndAnalysing
             catch (SqlException ex) {
                 sqlException = ex.Message;
                 sqlCon.Dispose();
+                MessageBox.Show(sqlException);
+                
                 return null;
             }
             return sqlCon;            
         }
-
+        
         public DataTable getSqlData(string sqlText, DataTable dt) {
 
             if (!isDbConnectionSet()) { sqlCon = setDbConnectivity(); }
@@ -58,6 +62,7 @@ namespace ForecastAndAnalysing
             {
 
                 sqlException = ex.Message;
+                MessageBox.Show(sqlException);
                 dt = null;
                 return dt;
             }

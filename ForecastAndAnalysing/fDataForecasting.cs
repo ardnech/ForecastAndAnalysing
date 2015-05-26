@@ -18,52 +18,61 @@ namespace ForecastAndAnalysing
             InitializeComponent();
         }
 
+        databaseConnectivity dbConn = null;
+        int selectedProductId;
+
         private void fDataForecasting_Load(object sender, EventArgs e)
         {
-            databaseConnectivity dbConn = new databaseConnectivity();
-
+            dbConn = new databaseConnectivity();
+            
 
             DataTable dtProductList = new DataTable();
             dbConn.getSqlData("common.getProductList", dtProductList);
 
+            comboBox_dataForecasting_productList.SelectedIndexChanged -= comboBox_dataForecasting_productList_SelectedIndexChanged;
             comboBox_dataForecasting_productList.DataSource = dtProductList;
             comboBox_dataForecasting_productList.DisplayMember = "productName";
             comboBox_dataForecasting_productList.ValueMember = "id";
-            
+            comboBox_dataForecasting_productList.SelectedIndexChanged += comboBox_dataForecasting_productList_SelectedIndexChanged;
+
+
+            selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
+            int trendEntityId = (int)numericUpDown1.Value;
+
+            chartRefresh(selectedProductId, trendEntityId);
+            gridRefresh(selectedProductId);
+
+
+        }
+
+        private void chartRefresh(int selectedProductId, int trendEntityId) {
             DataTable dtProductValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
-            dbConn.getSqlData("forecast.productData 1", dtProductValues);
-            chart1.DataSource = dtProductValues;
-            
-            chart1.Series.First().XValueMember = "month";
-            chart1.Series.First().YValueMembers = "value";
-            chart1.Series[0].BorderWidth = 4;
+            string sSql = "forecast.getProductDataByTrend " + selectedProductId.ToString() + " , " + trendEntityId.ToString()+"";
+            dbConn.getSqlData(sSql, dtProductValues);
 
-            chart1.DataBind();
-/*
-            DataTable dtProductValuesForTrend = new DataTable();
-            dbConn.getSqlData("forecast.productDataForTrend 1, 3", dtProductValuesForTrend);
-            chart1.DataSource = dtProductValuesForTrend;
+            //MessageBox.Show(dtProductValues.Rows.Count.ToString());
+            chart1.Series.Clear();
 
-            chart1.Series.Add("HistoricalData");
-            chart1.Series["HistoricalData"].XValueMember = "month";
-            chart1.Series["HistoricalData"].YValueMembers = "value";
-            chart1.Series["HistoricalData"].BorderWidth = 4;
-            chart1.Series["HistoricalData"].BorderColor = Color.Green;
+            chart1.DataBindCrossTable(dtProductValues.Rows, "seriesT", "month", "value", "");
 
-            chart1.DataBind();
-
+            foreach (Series sr in chart1.Series)
+            {
+                sr.ChartType = SeriesChartType.Line;
+                sr.BorderWidth = 2;
+                sr.SmartLabelStyle.Enabled = false;
+            }
 
 
 
             chart1.Series.Add("TrendLine");
-            chart1.Series["TrendLine"].ChartType = SeriesChartType.Line;
+            chart1.Series["TrendLine"].ChartType = SeriesChartType.Spline;
             chart1.Series["TrendLine"].BorderWidth = 1;
             chart1.Series["TrendLine"].Color = Color.Red;
             // Line of best fit is linear
             string typeRegression = "Linear";//"Exponential";//
                                              // The number of days for Forecasting
-            string forecasting = "1";
+            string forecasting = "3";
             // Show Error as a range chart.
             string error = "false";
             // Show Forecasting Error as a range chart.
@@ -73,12 +82,60 @@ namespace ForecastAndAnalysing
             //chart1.Series[0].Sort(PointSortOrder.Ascending, "X");
 
             // Create Forecasting Series.
-            chart1.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chart1.Series["HistoricalData"], chart1.Series["TrendLine"]);
+            chart1.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chart1.Series["TrendCalculated"], chart1.Series["TrendLine"]);
             //chart1.DataManipulator.FinancialFormula()
-*/
             chart1.Update();
+        }
 
-            textBox1.Text = comboBox_dataForecasting_productList.SelectedValue.ToString();
+
+        private void gridRefresh(int selectedProductId) {
+
+            DataTable dtProductGridValues = new DataTable();
+            //dbConn.getSqlData("forecast.productData 1", dtProductValues);
+            string sSql = "forecast.getProductDataForGrid " + selectedProductId.ToString() + "";
+            dbConn.getSqlData(sSql, dtProductGridValues);
+
+            dataGridView1.DataSource = dtProductGridValues;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.ReadOnly = true;
+            
+
+            foreach (DataGridViewRow drv in dataGridView1.Rows) {
+                switch( (int)drv.Cells[0].Value)
+                
+                {
+                    case 1:
+                        drv.DefaultCellStyle.Format = "D4";
+                        break;
+                    case 2:
+                        drv.DefaultCellStyle.Format = "N2";
+                        break;
+                    case 3:
+                        drv.DefaultCellStyle.Format = "N2";
+                        break;
+                }
+            }
+
+            
+            
+        }
+
+        private void comboBox_dataForecasting_productList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
+            int trendEntityId = (int)numericUpDown1.Value;
+            chartRefresh(selectedProductId, trendEntityId);
+
+            chartRefresh(selectedProductId, trendEntityId);
+            gridRefresh(selectedProductId);
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            int trendEntityId = (int)numericUpDown1.Value;
+            chartRefresh(selectedProductId, trendEntityId);
         }
     }
 }
