@@ -100,21 +100,6 @@ namespace ForecastAndAnalysing
             dataGridView1.ReadOnly = true;
             
 
-            foreach (DataGridViewRow drv in dataGridView1.Rows) {
-                switch( (int)drv.Cells[0].Value)
-                
-                {
-                    case 1:
-                        drv.DefaultCellStyle.Format = "D4";
-                        break;
-                    case 2:
-                        drv.DefaultCellStyle.Format = "N2";
-                        break;
-                    case 3:
-                        drv.DefaultCellStyle.Format = "N2";
-                        break;
-                }
-            }
 
             
             
