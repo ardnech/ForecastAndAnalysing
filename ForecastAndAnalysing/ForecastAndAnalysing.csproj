@@ -64,6 +64,7 @@
     <Compile Include="fMainForm.Designer.cs">
       <DependentUpon>fMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forecast_LineralTrendCalculation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fDataForecasting.resx">
