@@ -90,16 +90,17 @@ namespace ForecastAndAnalysing
                 sr.SmartLabelStyle.Enabled = false;
             }
 
-
+            
 
             chart1.Series.Add("TrendLine");
             chart1.Series["TrendLine"].ChartType = SeriesChartType.Spline;
             chart1.Series["TrendLine"].BorderWidth = 1;
             chart1.Series["TrendLine"].Color = Color.Red;
             // Line of best fit is linear
-            string typeRegression = "Linear";//"Exponential";//
+            //string typeRegression = "Linear";//"Exponential";//
+            string typeRegression = "Power";//"Exponential";//
                                              // The number of days for Forecasting
-            string forecasting = "3";
+            string forecasting = "10";
             // Show Error as a range chart.
             string error = "false";
             // Show Forecasting Error as a range chart.

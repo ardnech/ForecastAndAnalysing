@@ -204,8 +204,8 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1184F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel2.Controls.Add(this.chart1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 3);
@@ -249,7 +249,7 @@
             series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1258, 318);
+            this.chart1.Size = new System.Drawing.Size(1230, 318);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
             // 
@@ -261,7 +261,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 334);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1258, 35);
+            this.label3.Size = new System.Drawing.Size(1230, 35);
             this.label3.TabIndex = 7;
             this.label3.Text = "Suwak do okreslenia ilosci miesiecy dla ktorych wykonywany jest forecast";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -270,7 +270,7 @@
             // 
             this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.numericUpDown1.Location = new System.Drawing.Point(1267, 337);
+            this.numericUpDown1.Location = new System.Drawing.Point(1239, 337);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             2,
             0,
@@ -291,9 +291,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.PaleGreen;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(1267, 5);
+            this.label6.Location = new System.Drawing.Point(1239, 5);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 324);
+            this.label6.Size = new System.Drawing.Size(194, 324);
             this.label6.TabIndex = 8;
             this.label6.Text = "miejsce na dane szczegolowe z uwzglednieniem daty poczatkowej dla kalkulacji tren" +
     "du";
@@ -346,7 +346,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 480F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
             this.tableLayoutPanel3.Controls.Add(this.chart2, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.chart3, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.button2, 5, 2);
@@ -412,7 +412,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1251, 33);
+            this.button2.Location = new System.Drawing.Point(1250, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(184, 37);
             this.button2.TabIndex = 6;
@@ -423,7 +423,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(771, 33);
+            this.comboBox2.Location = new System.Drawing.Point(770, 33);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(201, 91);
             this.comboBox2.TabIndex = 2;
@@ -431,7 +431,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(771, 8);
+            this.label5.Location = new System.Drawing.Point(770, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(175, 13);
             this.label5.TabIndex = 4;
@@ -440,7 +440,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(435, 8);
+            this.label4.Location = new System.Drawing.Point(434, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 13);
             this.label4.TabIndex = 3;
@@ -450,7 +450,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(435, 33);
+            this.comboBox1.Location = new System.Drawing.Point(434, 33);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 91);
             this.comboBox1.TabIndex = 1;
