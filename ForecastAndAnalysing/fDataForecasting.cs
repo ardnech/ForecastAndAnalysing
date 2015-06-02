@@ -97,10 +97,10 @@ namespace ForecastAndAnalysing
             chart1.Series["TrendLine"].BorderWidth = 1;
             chart1.Series["TrendLine"].Color = Color.Red;
             // Line of best fit is linear
-            //string typeRegression = "Linear";//"Exponential";//
-            string typeRegression = "Power";//"Exponential";//
+            string typeRegression = "Linear";//"Exponential";//
+            //string typeRegression = "Power";//"Exponential";//
                                              // The number of days for Forecasting
-            string forecasting = "10";
+            string forecasting = "0";
             // Show Error as a range chart.
             string error = "false";
             // Show Forecasting Error as a range chart.
@@ -120,7 +120,7 @@ namespace ForecastAndAnalysing
 
             DataTable dtProductGridValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
-            string sSql = "forecast.getProductDataForGrid " + selectedProductId.ToString() + "";
+            string sSql = "forecast.[getProductDataForGridForecast] " + selectedProductId.ToString() + ", " + numericUpDown1.Value.ToString() + ", " + numericUpDown2.Value.ToString();
             dbConn.getSqlData(sSql, dtProductGridValues);
 
             dataGridView1.DataSource = dtProductGridValues;
@@ -149,6 +149,14 @@ namespace ForecastAndAnalysing
         {
             int trendEntityId = (int)numericUpDown1.Value;
             chartRefresh(selectedProductId, trendEntityId);
+            gridRefresh(selectedProductId);
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            int trendEntityId = (int)numericUpDown1.Value;
+            gridRefresh(selectedProductId);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -258,5 +266,7 @@ namespace ForecastAndAnalysing
             }
 
         }
+
+
     }
 }
