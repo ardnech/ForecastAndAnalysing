@@ -23,9 +23,38 @@ namespace ForecastAndAnalysing
 
         private void fDataForecasting_Load(object sender, EventArgs e)
         {
+            // setting up database connectivity
             dbConn = new databaseConnectivity();
-            
 
+            // reloading list of products available for user
+            productListReload();
+
+            // setting up currently selected product id
+            selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
+
+            // setting up number of periods taken for trend calculation
+            int trendEntityId = (int)numericUpDown1.Value;
+
+            // refreshing chart
+            chartRefresh(selectedProductId, trendEntityId);
+
+            // refreshing forecasted data
+            gridRefresh(selectedProductId);
+
+            // not sure if it's required by current system, calculating A and B parameters for trend calculation
+            //forecastTrendParameterCalculation();
+
+            // setting up table with color for each tab
+            foreach (TabPage tp in tabControl1.TabPages)
+                TabColors.Add(tp, tp.BackColor);
+
+            // setting up color no tab header, it's not available by default, can be set programically
+            tabColorSet();
+        }
+
+
+        // loading combo box with product list data
+        private void productListReload() {
             DataTable dtProductList = new DataTable();
             dbConn.getSqlData("common.getProductList", dtProductList);
 
@@ -35,23 +64,10 @@ namespace ForecastAndAnalysing
             comboBox_dataForecasting_productList.ValueMember = "id";
             comboBox_dataForecasting_productList.SelectedIndexChanged += comboBox_dataForecasting_productList_SelectedIndexChanged;
 
-
-            selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
-            int trendEntityId = (int)numericUpDown1.Value;
-
-            chartRefresh(selectedProductId, trendEntityId);
-            gridRefresh(selectedProductId);
-
-
-            forecastTrendParameterCalculation();
-
-            foreach (TabPage tp in tabControl1.TabPages)
-                TabColors.Add(tp, tp.BackColor);
-
-            tabColorSet();
         }
 
-        private void forecastTrendParameterCalculation() {
+        // not sure if it's required by current system, calculating A and B parameters for trend calculation
+        /*private void forecastTrendParameterCalculation() {
 
             // setting up class for lineralTrend parametes calculation
             forecast_LineralTrendCalculation fLineralTrendParameters = new forecast_LineralTrendCalculation();
@@ -71,7 +87,10 @@ namespace ForecastAndAnalysing
             label_AParam.Text = dA.ToString();
             label_BParam.Text = dB.ToString();
         }
+        */
 
+
+        // refreshing chart data with trend line based on historical period set with numeric value
         private void chartRefresh(int selectedProductId, int trendEntityId) {
             DataTable dtProductValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
@@ -115,7 +134,7 @@ namespace ForecastAndAnalysing
             chart1.Update();
         }
 
-
+        // refreshing forecaseted data based on calculation done on historical data and trend setup by user
         private void gridRefresh(int selectedProductId) {
 
             DataTable dtProductGridValues = new DataTable();
@@ -133,6 +152,8 @@ namespace ForecastAndAnalysing
             
         }
 
+
+        // event based on updated product data
         private void comboBox_dataForecasting_productList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -145,6 +166,7 @@ namespace ForecastAndAnalysing
 
         }
 
+        // event - numeric drop down - used to setup trend calculation
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             int trendEntityId = (int)numericUpDown1.Value;
@@ -152,6 +174,7 @@ namespace ForecastAndAnalysing
             gridRefresh(selectedProductId);
         }
 
+        // event -  numeric drop down - used to calculate future forecast
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
             int trendEntityId = (int)numericUpDown1.Value;
