@@ -72,10 +72,10 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label_AParam = new System.Windows.Forms.Label();
             this.label_BParam = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -365,7 +365,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1348, 616);
+            this.tabPage2.Size = new System.Drawing.Size(1348, 592);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Price modification";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -385,7 +385,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1342, 610);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1342, 586);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tabPage3
@@ -393,7 +393,7 @@
             this.tabPage3.Controls.Add(this.tableLayoutPanel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1348, 616);
+            this.tabPage3.Size = new System.Drawing.Size(1348, 592);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Seasonality";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -406,7 +406,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 480F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 199F));
             this.tableLayoutPanel3.Controls.Add(this.chart2, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.chart3, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.button2, 5, 2);
@@ -425,7 +425,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 254F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1348, 616);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1348, 592);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // chart2
@@ -439,14 +439,14 @@
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(3, 130);
+            this.chart2.Location = new System.Drawing.Point(3, 122);
             this.chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(1342, 188);
+            this.chart2.Size = new System.Drawing.Size(1342, 172);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart2";
             // 
@@ -460,7 +460,7 @@
             this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
             legend3.Name = "Legend1";
             this.chart3.Legends.Add(legend3);
-            this.chart3.Location = new System.Drawing.Point(3, 344);
+            this.chart3.Location = new System.Drawing.Point(3, 320);
             this.chart3.Name = "chart3";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
@@ -472,7 +472,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1152, 33);
+            this.button2.Location = new System.Drawing.Point(1151, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(184, 37);
             this.button2.TabIndex = 6;
@@ -483,15 +483,15 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(672, 33);
+            this.comboBox2.Location = new System.Drawing.Point(671, 33);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(201, 91);
+            this.comboBox2.Size = new System.Drawing.Size(201, 83);
             this.comboBox2.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(672, 8);
+            this.label5.Location = new System.Drawing.Point(671, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(175, 13);
             this.label5.TabIndex = 4;
@@ -500,7 +500,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(336, 8);
+            this.label4.Location = new System.Drawing.Point(335, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 13);
             this.label4.TabIndex = 3;
@@ -510,9 +510,9 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(336, 33);
+            this.comboBox1.Location = new System.Drawing.Point(335, 33);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 91);
+            this.comboBox1.Size = new System.Drawing.Size(201, 83);
             this.comboBox1.TabIndex = 1;
             // 
             // tabPage4
@@ -520,7 +520,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1348, 616);
+            this.tabPage4.Size = new System.Drawing.Size(1348, 592);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Events";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -530,7 +530,7 @@
             this.tabPage5.Controls.Add(this.tabControl2);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1348, 616);
+            this.tabPage5.Size = new System.Drawing.Size(1348, 592);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Competitors";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -547,7 +547,7 @@
             this.tabControl2.Multiline = true;
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1348, 616);
+            this.tabControl2.Size = new System.Drawing.Size(1348, 592);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage6
@@ -555,7 +555,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1160, 608);
+            this.tabPage6.Size = new System.Drawing.Size(1160, 584);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -565,7 +565,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1254, 608);
+            this.tabPage7.Size = new System.Drawing.Size(1160, 608);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -574,7 +574,7 @@
             // 
             this.tabPage8.Location = new System.Drawing.Point(4, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1254, 608);
+            this.tabPage8.Size = new System.Drawing.Size(1160, 608);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -596,17 +596,6 @@
             this.label_BParam.Size = new System.Drawing.Size(35, 13);
             this.label_BParam.TabIndex = 10;
             this.label_BParam.Text = "label4";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button1.Location = new System.Drawing.Point(707, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 38);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "show/hide seasonality tab";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label9
             // 
@@ -637,6 +626,17 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(328, 21);
             this.comboBox3.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button1.Location = new System.Drawing.Point(707, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "show/hide seasonality tab";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 

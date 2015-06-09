@@ -139,7 +139,7 @@ namespace ForecastAndAnalysing
 
         // refreshing forecaseted data based on calculation done on historical data and trend setup by user
         private void gridRefresh(int selectedProductId) {
-/*
+
             DataTable dtProductGridValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
             string sSql = "forecast.[getProductDataForGridForecast] " + selectedProductId.ToString() + ", " + numericUpDown1.Value.ToString() + ", " + numericUpDown2.Value.ToString();
@@ -148,7 +148,7 @@ namespace ForecastAndAnalysing
             dataGridView1.DataSource = dtProductGridValues;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.ReadOnly = true;
-*/            
+            
 
 
             
