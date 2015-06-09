@@ -21,21 +21,17 @@ namespace ForecastAndAnalysing
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            // initiate db connectivity
             databaseConnectivity dbCon = new databaseConnectivity();
-
-            //label_test1.Text = dbCon.isDbConnectionSet().ToString();
-
 
 
             
             DataTable dt = new DataTable();
-            dbCon.getSqlData("select * from dbo.test", dt);
+            dbCon.getSqlData("common.getUserDetails @userName = '" + System.Environment.UserName+"'", dt);
 
-            /*
-            dataGridView1.Columns["ordId"].DataPropertyName = "ordId";
-            dataGridView1.Columns["ordData"].DataPropertyName = "ordData";
-            dataGridView1.DataSource = dt;
-            */
+            GlobalStaticClass.commonUserId = (int)dt.Rows[0][0];
+
 
 
         }

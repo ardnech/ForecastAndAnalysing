@@ -93,6 +93,8 @@
       <DependentUpon>fMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forecast_LineralTrendCalculation.cs" />
+    <Compile Include="GlobalStatic.cs" />
+    <Compile Include="GlobalStaticClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fDataForecasting.resx">

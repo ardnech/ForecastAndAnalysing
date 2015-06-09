@@ -27,3 +27,7 @@ C:\Users\Kidzior\Documents\Visual Studio 2015\Projects\ForecastAndAnalysing\Fore
 C:\Users\Kidzior\Documents\Visual Studio 2015\Projects\ForecastAndAnalysing\ForecastAndAnalysing\ForecastAndAnalysing\bin\Debug\ForecastAndAnalysing.application
 C:\Users\Kidzior\Documents\Visual Studio 2015\Projects\ForecastAndAnalysing\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.exe.manifest
 C:\Users\Kidzior\Documents\Visual Studio 2015\Projects\ForecastAndAnalysing\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.application
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\bin\Debug\ForecastAndAnalysing.exe.manifest
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\bin\Debug\ForecastAndAnalysing.application
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.exe.manifest
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.application

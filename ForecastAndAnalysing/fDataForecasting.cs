@@ -56,7 +56,8 @@ namespace ForecastAndAnalysing
         // loading combo box with product list data
         private void productListReload() {
             DataTable dtProductList = new DataTable();
-            dbConn.getSqlData("common.getProductList", dtProductList);
+            string sSql = "common.getProductList @userId='" + GlobalStaticClass.commonUserId.ToString() + "'";
+            dbConn.getSqlData(sSql, dtProductList);
 
             comboBox_dataForecasting_productList.SelectedIndexChanged -= comboBox_dataForecasting_productList_SelectedIndexChanged;
             comboBox_dataForecasting_productList.DataSource = dtProductList;
@@ -94,13 +95,14 @@ namespace ForecastAndAnalysing
         private void chartRefresh(int selectedProductId, int trendEntityId) {
             DataTable dtProductValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
-            string sSql = "forecast.getProductDataByTrend " + selectedProductId.ToString() + " , " + trendEntityId.ToString()+"";
+            //string sSql = "forecast.getProductDataByTrend " + selectedProductId.ToString() + " , " + trendEntityId.ToString()+"";
+            string sSql = "forecast.getChartSalesAndTrend " + selectedProductId.ToString() + ", " + trendEntityId.ToString();
             dbConn.getSqlData(sSql, dtProductValues);
 
             //MessageBox.Show(dtProductValues.Rows.Count.ToString());
             chart1.Series.Clear();
 
-            chart1.DataBindCrossTable(dtProductValues.Rows, "seriesT", "month", "value", "");
+            chart1.DataBindCrossTable(dtProductValues.Rows, "seriesT", "date", "value", "");
 
             foreach (Series sr in chart1.Series)
             {
@@ -110,7 +112,7 @@ namespace ForecastAndAnalysing
             }
 
             
-
+            /*
             chart1.Series.Add("TrendLine");
             chart1.Series["TrendLine"].ChartType = SeriesChartType.Spline;
             chart1.Series["TrendLine"].BorderWidth = 1;
@@ -131,12 +133,13 @@ namespace ForecastAndAnalysing
             // Create Forecasting Series.
             chart1.DataManipulator.FinancialFormula(FinancialFormula.Forecasting, parameters, chart1.Series["TrendCalculated"], chart1.Series["TrendLine"]);
             //chart1.DataManipulator.FinancialFormula()
+            */
             chart1.Update();
         }
 
         // refreshing forecaseted data based on calculation done on historical data and trend setup by user
         private void gridRefresh(int selectedProductId) {
-
+/*
             DataTable dtProductGridValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
             string sSql = "forecast.[getProductDataForGridForecast] " + selectedProductId.ToString() + ", " + numericUpDown1.Value.ToString() + ", " + numericUpDown2.Value.ToString();
@@ -145,7 +148,7 @@ namespace ForecastAndAnalysing
             dataGridView1.DataSource = dtProductGridValues;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.ReadOnly = true;
-            
+*/            
 
 
             
@@ -188,6 +191,9 @@ namespace ForecastAndAnalysing
                 HideTabPage(tabPage3);
             else
                 ShowTabPage(tabPage3);
+
+            MessageBox.Show(System.Environment.UserName.ToString() + " " + System.Environment.UserDomainName.ToString());
+            
         }
 
         private void HideTabPage(TabPage tp)

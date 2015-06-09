@@ -26,7 +26,8 @@ namespace ForecastAndAnalysing
 
         private SqlConnection setDbConnectivity() {
 
-            sqlCon.ConnectionString = "Data Source=93.105.202.70\\sql2014,50411; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
+            //sqlCon.ConnectionString = "Data Source=93.105.202.70\\sql2014,50411; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
+            sqlCon.ConnectionString = "Data Source=.\\sqlexpress; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
 
             try
             {
