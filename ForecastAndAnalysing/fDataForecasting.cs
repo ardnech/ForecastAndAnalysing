@@ -32,6 +32,12 @@ namespace ForecastAndAnalysing
             // setting up currently selected product id
             selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
 
+            
+            // related to scenario management
+            Forecast_ScenarioManagementTab scenarioManagementTab = new Forecast_ScenarioManagementTab();
+            scenarioManagementTab.ScenarioListReload(ref dbConn, ref comboBox_scenarioList, ref selectedProductId);
+                
+
             // setting up number of periods taken for trend calculation
             int trendEntityId = (int)numericUpDown1.Value;
 
@@ -187,10 +193,10 @@ namespace ForecastAndAnalysing
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tabControl1.TabPages.Contains(tabPage3))
-                HideTabPage(tabPage3);
+            if (tabControl1.TabPages.Contains(tabPage_Seasonality))
+                HideTabPage(tabPage_Seasonality);
             else
-                ShowTabPage(tabPage3);
+                ShowTabPage(tabPage_Seasonality);
 
             MessageBox.Show(System.Environment.UserName.ToString() + " " + System.Environment.UserDomainName.ToString());
             

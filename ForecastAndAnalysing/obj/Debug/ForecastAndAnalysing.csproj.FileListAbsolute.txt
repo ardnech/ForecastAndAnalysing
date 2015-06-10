@@ -31,3 +31,4 @@ C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\Foreca
 C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\bin\Debug\ForecastAndAnalysing.application
 C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.exe.manifest
 C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.application
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\ForecastAndAnalysing\obj\Debug\ForecastAndAnalysing.scenarioManagement.resources
