@@ -19,6 +19,8 @@ namespace ForecastAndAnalysing
         }
 
         databaseConnectivity dbConn = null;
+        Forecast_ScenarioManagementTab scenarioManagementTab = null;
+
         int selectedProductId;
 
         private void fDataForecasting_Load(object sender, EventArgs e)
@@ -33,9 +35,6 @@ namespace ForecastAndAnalysing
             selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
 
             
-            // related to scenario management
-            Forecast_ScenarioManagementTab scenarioManagementTab = new Forecast_ScenarioManagementTab();
-            scenarioManagementTab.ScenarioListReload(ref dbConn, ref comboBox_scenarioList, ref selectedProductId);
                 
 
             // setting up number of periods taken for trend calculation
@@ -56,8 +55,43 @@ namespace ForecastAndAnalysing
 
             // setting up color no tab header, it's not available by default, can be set programically
             tabColorSet();
+
+            #region ScenarioTab definitions
+            // related to scenario management
+            scenarioManagementTab = new Forecast_ScenarioManagementTab();
+            // initialise object refference
+            scenarioManagementTab.scenarioComboBox = comboBox_scenarioList;
+            scenarioManagementTab.dbConnectivity = dbConn;
+            scenarioManagementTab.scenarioTextBoxSet = textBox_scenarioTab_scenarioName;
+
+
+            scenarioManagementTab.ScenarioListReload( ref selectedProductId);
+
+
+
+        #endregion
+
+    }
+
+        #region scenarioTab events
+        private void button_scenarioManagement_CreateNew_Click(object sender, EventArgs e)
+        {
+            scenarioManagementTab.ScenarioTextBoxActivate();
         }
 
+
+        private void button_scenarioTab_saveScenario_Click(object sender, EventArgs e)
+        {
+            scenarioManagementTab.scenarioAdd(ref selectedProductId);
+        }
+
+        private void button_scenarioTab_deleteScenario_Click(object sender, EventArgs e)
+        {
+            scenarioManagementTab.scenarioDelete(ref selectedProductId);
+        }
+
+
+        #endregion
 
         // loading combo box with product list data
         private void productListReload() {
@@ -301,7 +335,6 @@ namespace ForecastAndAnalysing
             }
 
         }
-
 
     }
 }

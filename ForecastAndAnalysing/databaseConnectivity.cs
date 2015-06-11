@@ -27,7 +27,7 @@ namespace ForecastAndAnalysing
         private SqlConnection setDbConnectivity() {
 
             //sqlCon.ConnectionString = "Data Source=93.105.202.70\\sql2014,50411; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
-            sqlCon.ConnectionString = "Data Source=.\\sql2014; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
+            sqlCon.ConnectionString = "Data Source=.\\sqlexpress; Initial Catalog=forecast;User ID=forecast;Password=Jeron1mo";
 
             try
             {
@@ -69,6 +69,25 @@ namespace ForecastAndAnalysing
             }
         }
 
+        public void runSql(string sqlText)
+        {
+
+            if (!isDbConnectionSet()) { sqlCon = setDbConnectivity(); }
+
+            try
+            {
+
+                SqlCommand sqlCmd = new SqlCommand(sqlText, sqlCon);
+                sqlCmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+
+                sqlException = ex.Message;
+                MessageBox.Show(sqlException);
+            }
+        }
 
 
         public bool isDbConnectionSet() {
