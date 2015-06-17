@@ -21,8 +21,6 @@ namespace ForecastAndAnalysing
         databaseConnectivity dbConn = null;
         Forecast_ScenarioManagementTab scenarioManagementTab = null;
 
-        int selectedProductId;
-
         private void fDataForecasting_Load(object sender, EventArgs e)
         {
             // setting up database connectivity
@@ -31,20 +29,16 @@ namespace ForecastAndAnalysing
             // reloading list of products available for user
             productListReload();
 
-            // setting up currently selected product id
-            selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
 
-            
-                
 
             // setting up number of periods taken for trend calculation
             int trendEntityId = (int)numericUpDown1.Value;
 
             // refreshing chart
-            chartRefresh(selectedProductId, trendEntityId);
+            chartRefresh(trendEntityId);
 
             // refreshing forecasted data
-            gridRefresh(selectedProductId);
+            gridRefresh();
 
             // not sure if it's required by current system, calculating A and B parameters for trend calculation
             //forecastTrendParameterCalculation();
@@ -64,14 +58,13 @@ namespace ForecastAndAnalysing
             scenarioManagementTab.dbConnectivity = dbConn;
             scenarioManagementTab.scenarioTextBoxSet = textBox_scenarioTab_scenarioName;
 
-
-            scenarioManagementTab.ScenarioListReload( ref selectedProductId);
-
+            scenarioListReload();
 
 
-        #endregion
 
-    }
+            #endregion
+
+        }
 
         #region scenarioTab events
         private void button_scenarioManagement_CreateNew_Click(object sender, EventArgs e)
@@ -82,14 +75,39 @@ namespace ForecastAndAnalysing
 
         private void button_scenarioTab_saveScenario_Click(object sender, EventArgs e)
         {
-            scenarioManagementTab.scenarioAdd(ref selectedProductId);
+            scenarioManagementTab.scenarioAdd();
         }
 
         private void button_scenarioTab_deleteScenario_Click(object sender, EventArgs e)
         {
-            scenarioManagementTab.scenarioDelete(ref selectedProductId);
+            scenarioManagementTab.scenarioDelete();
         }
 
+        private void comboBox_scenarioList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // setting up currently selected scenario id
+            GlobalStaticClass.commonScenarioId = (int)comboBox_scenarioList.SelectedValue;
+            scenarioManagementTab.chartScenarioHistoricalRefresh(chart_Scenario_HistoricalData, 12);
+
+        }
+
+        private void scenarioListReload() {
+            // reload data related to scenario
+            comboBox_scenarioList.SelectedIndexChanged -= comboBox_scenarioList_SelectedIndexChanged;
+            scenarioManagementTab.ScenarioListReload();
+            comboBox_scenarioList.SelectedIndexChanged += comboBox_scenarioList_SelectedIndexChanged;
+
+            // setting up currently selected scenario id
+
+            
+            try
+            {
+                GlobalStaticClass.commonScenarioId = (int)comboBox_scenarioList.SelectedValue;
+            } catch{
+
+                GlobalStaticClass.commonScenarioId = 0;
+            }
+        }
 
         #endregion
 
@@ -104,6 +122,10 @@ namespace ForecastAndAnalysing
             comboBox_dataForecasting_productList.DisplayMember = "productName";
             comboBox_dataForecasting_productList.ValueMember = "id";
             comboBox_dataForecasting_productList.SelectedIndexChanged += comboBox_dataForecasting_productList_SelectedIndexChanged;
+
+            // setting up currently selected product id
+            GlobalStaticClass.commonProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
+
 
         }
 
@@ -132,7 +154,9 @@ namespace ForecastAndAnalysing
 
 
         // refreshing chart data with trend line based on historical period set with numeric value
-        private void chartRefresh(int selectedProductId, int trendEntityId) {
+        private void chartRefresh(int trendEntityId) {
+            int selectedProductId = GlobalStaticClass.commonProductId;
+
             DataTable dtProductValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
             //string sSql = "forecast.getProductDataByTrend " + selectedProductId.ToString() + " , " + trendEntityId.ToString()+"";
@@ -178,8 +202,8 @@ namespace ForecastAndAnalysing
         }
 
         // refreshing forecaseted data based on calculation done on historical data and trend setup by user
-        private void gridRefresh(int selectedProductId) {
-
+        private void gridRefresh() {
+            int selectedProductId = GlobalStaticClass.commonProductId;
             DataTable dtProductGridValues = new DataTable();
             //dbConn.getSqlData("forecast.productData 1", dtProductValues);
             string sSql = "forecast.[getProductDataForGridForecast] " + selectedProductId.ToString() + ", " + numericUpDown1.Value.ToString() + ", " + numericUpDown2.Value.ToString();
@@ -200,12 +224,16 @@ namespace ForecastAndAnalysing
         private void comboBox_dataForecasting_productList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            selectedProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
-            int trendEntityId = (int)numericUpDown1.Value;
-            chartRefresh(selectedProductId, trendEntityId);
+            // setting up currently selected product id
+            GlobalStaticClass.commonProductId = (int)comboBox_dataForecasting_productList.SelectedValue;
 
-            chartRefresh(selectedProductId, trendEntityId);
-            gridRefresh(selectedProductId);
+            int trendEntityId = (int)numericUpDown1.Value;
+            chartRefresh(trendEntityId);
+            
+            chartRefresh(trendEntityId);
+            gridRefresh();
+
+            scenarioListReload();
 
         }
 
@@ -213,15 +241,15 @@ namespace ForecastAndAnalysing
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             int trendEntityId = (int)numericUpDown1.Value;
-            chartRefresh(selectedProductId, trendEntityId);
-            gridRefresh(selectedProductId);
+            chartRefresh(trendEntityId);
+            gridRefresh();
         }
 
         // event -  numeric drop down - used to calculate future forecast
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
             int trendEntityId = (int)numericUpDown1.Value;
-            gridRefresh(selectedProductId);
+            gridRefresh();
 
         }
 
@@ -335,6 +363,5 @@ namespace ForecastAndAnalysing
             }
 
         }
-
     }
 }

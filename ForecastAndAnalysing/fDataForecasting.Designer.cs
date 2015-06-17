@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button_AcceptationSend = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -55,9 +55,10 @@
             this.comboBox_scenarioList = new System.Windows.Forms.ComboBox();
             this.button_scenarioManagement_CreateNew = new System.Windows.Forms.Button();
             this.textBox_scenarioTab_scenarioName = new System.Windows.Forms.TextBox();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart5 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_Scenario_CalculatedData = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_Scenario_HistoricalData = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button_scenarioTab_saveScenario = new System.Windows.Forms.Button();
+            this.button_scenarioTab_deleteScenario = new System.Windows.Forms.Button();
             this.tabPage_TrendCalculation = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -88,14 +89,13 @@
             this.label_BParam = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button_scenarioTab_deleteScenario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage_ScenarioManagement.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Scenario_CalculatedData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Scenario_HistoricalData)).BeginInit();
             this.tabPage_TrendCalculation.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -237,8 +237,8 @@
             this.tableLayoutPanel5.Controls.Add(this.comboBox_scenarioList, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.button_scenarioManagement_CreateNew, 3, 1);
             this.tableLayoutPanel5.Controls.Add(this.textBox_scenarioTab_scenarioName, 3, 2);
-            this.tableLayoutPanel5.Controls.Add(this.chart4, 3, 6);
-            this.tableLayoutPanel5.Controls.Add(this.chart5, 3, 4);
+            this.tableLayoutPanel5.Controls.Add(this.chart_Scenario_CalculatedData, 3, 6);
+            this.tableLayoutPanel5.Controls.Add(this.chart_Scenario_HistoricalData, 3, 4);
             this.tableLayoutPanel5.Controls.Add(this.button_scenarioTab_saveScenario, 5, 1);
             this.tableLayoutPanel5.Controls.Add(this.button_scenarioTab_deleteScenario, 5, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -264,6 +264,7 @@
             this.tableLayoutPanel5.SetRowSpan(this.comboBox_scenarioList, 6);
             this.comboBox_scenarioList.Size = new System.Drawing.Size(292, 558);
             this.comboBox_scenarioList.TabIndex = 18;
+            this.comboBox_scenarioList.SelectedIndexChanged += new System.EventHandler(this.comboBox_scenarioList_SelectedIndexChanged);
             // 
             // button_scenarioManagement_CreateNew
             // 
@@ -285,39 +286,41 @@
             this.textBox_scenarioTab_scenarioName.Size = new System.Drawing.Size(341, 20);
             this.textBox_scenarioTab_scenarioName.TabIndex = 17;
             // 
-            // chart4
+            // chart_Scenario_CalculatedData
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea2);
-            this.tableLayoutPanel5.SetColumnSpan(this.chart4, 3);
-            legend2.Name = "Legend1";
-            this.chart4.Legends.Add(legend2);
-            this.chart4.Location = new System.Drawing.Point(354, 400);
-            this.chart4.Name = "chart4";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart4.Series.Add(series2);
-            this.chart4.Size = new System.Drawing.Size(977, 176);
-            this.chart4.TabIndex = 19;
-            this.chart4.Text = "chart4";
+            chartArea6.Area3DStyle.Enable3D = true;
+            chartArea6.Name = "ChartArea1";
+            this.chart_Scenario_CalculatedData.ChartAreas.Add(chartArea6);
+            this.tableLayoutPanel5.SetColumnSpan(this.chart_Scenario_CalculatedData, 3);
+            legend6.Name = "Legend1";
+            this.chart_Scenario_CalculatedData.Legends.Add(legend6);
+            this.chart_Scenario_CalculatedData.Location = new System.Drawing.Point(354, 400);
+            this.chart_Scenario_CalculatedData.Name = "chart_Scenario_CalculatedData";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea100;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart_Scenario_CalculatedData.Series.Add(series6);
+            this.chart_Scenario_CalculatedData.Size = new System.Drawing.Size(977, 176);
+            this.chart_Scenario_CalculatedData.TabIndex = 19;
+            this.chart_Scenario_CalculatedData.Text = "chart4";
             // 
-            // chart5
+            // chart_Scenario_HistoricalData
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart5.ChartAreas.Add(chartArea3);
-            this.tableLayoutPanel5.SetColumnSpan(this.chart5, 3);
-            legend3.Name = "Legend1";
-            this.chart5.Legends.Add(legend3);
-            this.chart5.Location = new System.Drawing.Point(354, 110);
-            this.chart5.Name = "chart5";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart5.Series.Add(series3);
-            this.chart5.Size = new System.Drawing.Size(967, 264);
-            this.chart5.TabIndex = 21;
-            this.chart5.Text = "chart5";
+            chartArea7.Name = "ChartArea1";
+            this.chart_Scenario_HistoricalData.ChartAreas.Add(chartArea7);
+            this.tableLayoutPanel5.SetColumnSpan(this.chart_Scenario_HistoricalData, 3);
+            legend7.Name = "Legend1";
+            this.chart_Scenario_HistoricalData.Legends.Add(legend7);
+            this.chart_Scenario_HistoricalData.Location = new System.Drawing.Point(354, 110);
+            this.chart_Scenario_HistoricalData.Name = "chart_Scenario_HistoricalData";
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart_Scenario_HistoricalData.Series.Add(series7);
+            this.chart_Scenario_HistoricalData.Size = new System.Drawing.Size(967, 264);
+            this.chart_Scenario_HistoricalData.TabIndex = 21;
+            this.chart_Scenario_HistoricalData.Text = "chart5";
             // 
             // button_scenarioTab_saveScenario
             // 
@@ -328,6 +331,16 @@
             this.button_scenarioTab_saveScenario.Text = "Save Scenario";
             this.button_scenarioTab_saveScenario.UseVisualStyleBackColor = true;
             this.button_scenarioTab_saveScenario.Click += new System.EventHandler(this.button_scenarioTab_saveScenario_Click);
+            // 
+            // button_scenarioTab_deleteScenario
+            // 
+            this.button_scenarioTab_deleteScenario.Location = new System.Drawing.Point(701, 58);
+            this.button_scenarioTab_deleteScenario.Name = "button_scenarioTab_deleteScenario";
+            this.button_scenarioTab_deleteScenario.Size = new System.Drawing.Size(267, 23);
+            this.button_scenarioTab_deleteScenario.TabIndex = 22;
+            this.button_scenarioTab_deleteScenario.Text = "Delete Scenario";
+            this.button_scenarioTab_deleteScenario.UseVisualStyleBackColor = true;
+            this.button_scenarioTab_deleteScenario.Click += new System.EventHandler(this.button_scenarioTab_deleteScenario_Click);
             // 
             // tabPage_TrendCalculation
             // 
@@ -373,28 +386,28 @@
             // 
             // chart1
             // 
-            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisX.MajorGrid.Interval = 0D;
-            chartArea1.AxisX.MajorGrid.IntervalOffset = 0D;
-            chartArea1.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Months;
-            chartArea1.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Months;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            chartArea8.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea8.AxisX.MajorGrid.Interval = 0D;
+            chartArea8.AxisX.MajorGrid.IntervalOffset = 0D;
+            chartArea8.AxisX.MajorGrid.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Months;
+            chartArea8.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Months;
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
             this.tableLayoutPanel2.SetColumnSpan(this.chart1, 3);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Enabled = false;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend8.Enabled = false;
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(3, 8);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.CustomProperties = "IsXAxisQuantitative=True";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
-            this.chart1.Series.Add(series1);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.CustomProperties = "IsXAxisQuantitative=True";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            series8.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
+            series8.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(1185, 274);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -533,7 +546,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 480F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel3.Controls.Add(this.chart2, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.chart3, 0, 5);
             this.tableLayoutPanel3.Controls.Add(this.button2, 5, 2);
@@ -559,20 +572,20 @@
             // 
             this.chart2.BorderlineColor = System.Drawing.Color.Black;
             this.chart2.BorderlineWidth = 4;
-            chartArea4.AxisY.MajorGrid.Enabled = false;
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
+            chartArea9.AxisY.MajorGrid.Enabled = false;
+            chartArea9.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea9);
             this.tableLayoutPanel3.SetColumnSpan(this.chart2, 6);
             this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            legend9.Name = "Legend1";
+            this.chart2.Legends.Add(legend9);
             this.chart2.Location = new System.Drawing.Point(3, 120);
             this.chart2.Name = "chart2";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart2.Series.Add(series4);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart2.Series.Add(series9);
             this.chart2.Size = new System.Drawing.Size(1334, 167);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart2";
@@ -581,25 +594,25 @@
             // 
             this.chart3.BorderlineColor = System.Drawing.Color.Black;
             this.chart3.BorderlineWidth = 4;
-            chartArea5.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea5);
+            chartArea10.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea10);
             this.tableLayoutPanel3.SetColumnSpan(this.chart3, 6);
             this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.chart3.Legends.Add(legend5);
+            legend10.Name = "Legend1";
+            this.chart3.Legends.Add(legend10);
             this.chart3.Location = new System.Drawing.Point(3, 313);
             this.chart3.Name = "chart3";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart3.Series.Add(series5);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chart3.Series.Add(series10);
             this.chart3.Size = new System.Drawing.Size(1334, 248);
             this.chart3.TabIndex = 5;
             this.chart3.Text = "chart3";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1137, 33);
+            this.button2.Location = new System.Drawing.Point(1135, 33);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(184, 37);
             this.button2.TabIndex = 6;
@@ -610,7 +623,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(657, 33);
+            this.comboBox2.Location = new System.Drawing.Point(655, 33);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(201, 81);
             this.comboBox2.TabIndex = 2;
@@ -618,7 +631,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(657, 8);
+            this.label5.Location = new System.Drawing.Point(655, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(175, 13);
             this.label5.TabIndex = 4;
@@ -627,7 +640,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(321, 8);
+            this.label4.Location = new System.Drawing.Point(319, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 13);
             this.label4.TabIndex = 3;
@@ -637,7 +650,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(321, 33);
+            this.comboBox1.Location = new System.Drawing.Point(319, 33);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 81);
             this.comboBox1.TabIndex = 1;
@@ -745,16 +758,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button_scenarioTab_deleteScenario
-            // 
-            this.button_scenarioTab_deleteScenario.Location = new System.Drawing.Point(701, 58);
-            this.button_scenarioTab_deleteScenario.Name = "button_scenarioTab_deleteScenario";
-            this.button_scenarioTab_deleteScenario.Size = new System.Drawing.Size(267, 23);
-            this.button_scenarioTab_deleteScenario.TabIndex = 22;
-            this.button_scenarioTab_deleteScenario.Text = "Delete Scenario";
-            this.button_scenarioTab_deleteScenario.UseVisualStyleBackColor = true;
-            this.button_scenarioTab_deleteScenario.Click += new System.EventHandler(this.button_scenarioTab_deleteScenario_Click);
-            // 
             // fDataForecasting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -771,8 +774,8 @@
             this.tabPage_ScenarioManagement.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Scenario_CalculatedData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Scenario_HistoricalData)).EndInit();
             this.tabPage_TrendCalculation.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -835,8 +838,8 @@
         private System.Windows.Forms.TabPage tabPage_ScenarioManagement;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.ComboBox comboBox_scenarioList;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_Scenario_CalculatedData;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_Scenario_HistoricalData;
         private System.Windows.Forms.Button button_scenarioTab_saveScenario;
         private System.Windows.Forms.Button button_scenarioTab_deleteScenario;
     }

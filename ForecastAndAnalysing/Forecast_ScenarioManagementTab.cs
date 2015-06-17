@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
-
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ForecastAndAnalysing
 {
@@ -40,36 +40,62 @@ namespace ForecastAndAnalysing
 
 
 
-        public void ScenarioListReload(ref int iProductId)
+        public void ScenarioListReload()
         {
-
+            int iProductId = GlobalStaticClass.commonProductId;
             DataTable dtScenarioList = new DataTable();
             string sSql = "forecast.scenarioGet @userId='" + GlobalStaticClass.commonUserId.ToString() + "', @productId = '"+ iProductId.ToString()+"'";
             dbConn.getSqlData(sSql, dtScenarioList);
-
-
+            
             cb.DataSource = dtScenarioList;
             cb.DisplayMember = "name";
             cb.ValueMember = "id";
         }
 
-        public void scenarioAdd(ref int iProductId) {
+        public void scenarioAdd() {
+            int iProductId = GlobalStaticClass.commonProductId;
             string sScenarioName = scenarioTextBox.Text.ToString();
             string sSql = "forecast.scenarioAdd @userId='" + GlobalStaticClass.commonUserId.ToString() + "', @productId = '" + iProductId.ToString() + "', @name = '"+sScenarioName+"', @descr = ''";
             dbConn.runSql(sSql);
 
-            ScenarioListReload(ref iProductId);
+            ScenarioListReload();
         }
 
-        public void scenarioDelete(ref int iProductId)
+        public void scenarioDelete()
         {
+            int iProductId = GlobalStaticClass.commonProductId;
             if (scenarioComboBox.SelectedIndex >= 0) {
                 int iScenarioId = (int)scenarioComboBox.SelectedValue;
                 string sSql = "forecast.scenarioDelete @userId='" + GlobalStaticClass.commonUserId.ToString() + "', @scenarioId = '" + iScenarioId.ToString() + "'";
                 dbConn.runSql(sSql);
 
-                ScenarioListReload(ref iProductId);
+                ScenarioListReload();
             }
+        }
+
+        public void chartScenarioHistoricalRefresh(Chart chr, int trendEntityId)
+        {
+            int selectedProductId = GlobalStaticClass.commonProductId;
+
+            DataTable dtProductValues = new DataTable();
+            //dbConn.getSqlData("forecast.productData 1", dtProductValues);
+            //string sSql = "forecast.getProductDataByTrend " + selectedProductId.ToString() + " , " + trendEntityId.ToString()+"";
+            string sSql = "[forecast].[getScenarioHistoricalDataForChart] " + GlobalStaticClass.commonScenarioId.ToString() + ", " + trendEntityId.ToString();
+            dbConn.getSqlData(sSql, dtProductValues);
+
+            //MessageBox.Show(dtProductValues.Rows.Count.ToString());
+            chr.Series.Clear();
+            chr.DataBindCrossTable(dtProductValues.Rows, "seriesT", "month", "value", "");
+
+            foreach (Series sr in chr.Series)
+            {
+                sr.ChartType = SeriesChartType.Line;
+                sr.BorderWidth = 2;
+                sr.SmartLabelStyle.Enabled = false;
+            }
+
+
+            chr.Update();
         }
 
     }
