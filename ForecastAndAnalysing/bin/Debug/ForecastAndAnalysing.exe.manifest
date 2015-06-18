@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ForecastAndAnalysing.exe" size="39888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ForecastAndAnalysing.exe" size="40400">
       <assemblyIdentity name="ForecastAndAnalysing" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kxwV+J5W2fWh6t9xP5iPXXDPHopzisce+phjSpAgtE8=</dsig:DigestValue>
+        <dsig:DigestValue>zZPaiLjFEScuailIWVggdbMhmrYpPxIlNCMRBqnG8SE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

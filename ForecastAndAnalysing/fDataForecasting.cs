@@ -87,7 +87,9 @@ namespace ForecastAndAnalysing
         {
             // setting up currently selected scenario id
             GlobalStaticClass.commonScenarioId = (int)comboBox_scenarioList.SelectedValue;
+
             scenarioManagementTab.chartScenarioHistoricalRefresh(chart_Scenario_HistoricalData, 12);
+            scenarioManagementTab.chartScenarioForecastRefresh(chart_Scenario_CalculatedData, 12);
 
         }
 
@@ -103,7 +105,12 @@ namespace ForecastAndAnalysing
             try
             {
                 GlobalStaticClass.commonScenarioId = (int)comboBox_scenarioList.SelectedValue;
-            } catch{
+                scenarioManagementTab.chartScenarioHistoricalRefresh(chart_Scenario_HistoricalData, 12);
+                scenarioManagementTab.chartScenarioForecastRefresh(chart_Scenario_CalculatedData, 12);
+
+            }
+            catch
+            {
 
                 GlobalStaticClass.commonScenarioId = 0;
             }
@@ -209,10 +216,16 @@ namespace ForecastAndAnalysing
             string sSql = "forecast.[getProductDataForGridForecast] " + selectedProductId.ToString() + ", " + numericUpDown1.Value.ToString() + ", " + numericUpDown2.Value.ToString();
             dbConn.getSqlData(sSql, dtProductGridValues);
 
-            dataGridView1.DataSource = dtProductGridValues;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.ReadOnly = true;
-            
+            if (dtProductGridValues.Rows.Count.ToString() != "0")
+            {
+                dataGridView1.DataSource = dtProductGridValues;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.ReadOnly = true;
+                dataGridView1.Visible = true;
+            }
+            else {
+                dataGridView1.Visible = false;
+            }
 
 
             

@@ -98,5 +98,30 @@ namespace ForecastAndAnalysing
             chr.Update();
         }
 
+        public void chartScenarioForecastRefresh(Chart chr, int trendEntityId)
+        {
+            int selectedProductId = GlobalStaticClass.commonProductId;
+
+            DataTable dtProductValues = new DataTable();
+            //dbConn.getSqlData("forecast.productData 1", dtProductValues);
+            //string sSql = "forecast.getProductDataByTrend " + selectedProductId.ToString() + " , " + trendEntityId.ToString()+"";
+            string sSql = "[forecast].[getScenarioForecastedDataForChart] " + GlobalStaticClass.commonScenarioId.ToString() + ", " + trendEntityId.ToString();
+            dbConn.getSqlData(sSql, dtProductValues);
+
+            //MessageBox.Show(dtProductValues.Rows.Count.ToString());
+            chr.Series.Clear();
+            chr.DataBindCrossTable(dtProductValues.Rows, "seriesT", "date", "value", "");
+
+            foreach (Series sr in chr.Series)
+            {
+                sr.ChartType = SeriesChartType.Line;
+                sr.BorderWidth = 2;
+                sr.SmartLabelStyle.Enabled = false;
+            }
+
+
+            chr.Update();
+        }
+
     }
 }
