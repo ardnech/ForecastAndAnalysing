@@ -18,22 +18,38 @@ namespace ForecastAndAnalysing
             InitializeComponent();
         }
 
+        // initiate db connectivity
+        databaseConnectivity dbCon = new databaseConnectivity();
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            // initiate db connectivity
-            databaseConnectivity dbCon = new databaseConnectivity();
-
-
-            
-            DataTable dt = new DataTable();
-            dbCon.getSqlData("common.getUserDetails @userName = '" + System.Environment.UserName+"'", dt);
-
-            GlobalStaticClass.commonUserId = (int)dt.Rows[0][0];
+            // setup userId value on global class
+            setGlobalUserId();
 
 
 
+
+            dbCon.getSqlData("common.getAppLabels @userId = '" + GlobalStaticClass.commonUserId.ToString() + "'", GlobalStaticClass.load_dtLabel);
+
+            DataRow[] result = GlobalStaticClass.load_dtLabel.Select("tag='appName'");
+
+            this.Text = result[0][1].ToString();
+
+        }
+
+        private void setGlobalUserId()
+        {
+            try {
+                DataTable dt = new DataTable();
+                dbCon.getSqlData("common.getUserDetails @userName = '" + System.Environment.UserName + "'", dt);
+
+                GlobalStaticClass.commonUserId = (int)dt.Rows[0][0];
+            } catch
+            {
+                Application.Exit();
+            }
         }
 
         private void helpInfoToolStripMenuItem_Click(object sender, EventArgs e)

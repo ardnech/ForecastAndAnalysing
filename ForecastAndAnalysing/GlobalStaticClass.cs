@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace ForecastAndAnalysing
 {
@@ -12,6 +13,12 @@ namespace ForecastAndAnalysing
         private static int iUserId;
         private static int iProductId;
         private static int iScenarioId;
+        private static DataTable dtLabel = new DataTable();
+
+        public static DataTable load_dtLabel {
+            get { return dtLabel; }
+            set { dtLabel = value; }
+        }
 
         public static int commonUserId
         {
