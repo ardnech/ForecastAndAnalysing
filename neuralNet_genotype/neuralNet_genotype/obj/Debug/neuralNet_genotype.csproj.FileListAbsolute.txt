@@ -1,0 +1,9 @@
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\bin\Debug\neuralNet_genotype.exe.config
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\bin\Debug\neuralNet_genotype.exe
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\bin\Debug\neuralNet_genotype.pdb
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\obj\Debug\neuralNet_genotype.csprojResolveAssemblyReference.cache
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\obj\Debug\neuralNet_genotype.Form1.resources
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\obj\Debug\neuralNet_genotype.Properties.Resources.resources
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\obj\Debug\neuralNet_genotype.csproj.GenerateResource.Cache
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\obj\Debug\neuralNet_genotype.exe
+C:\Users\Artur\Documents\Visual Studio 2013\Projects\ForecastAndAnalysing\neuralNet_genotype\neuralNet_genotype\obj\Debug\neuralNet_genotype.pdb
